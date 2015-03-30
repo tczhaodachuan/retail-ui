@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>retail-ui</title>
 
-    <link rel="stylesheet" href="static/lib/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/lib/bootstrap-3.3.4-dist/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/metisMenu/dist/metisMenu.min.css"/>
-    <link rel="stylesheet" href="static/lib/startbootstrap-sb-admin-2-1.0.5/dist/css/timeline.css"/>
-    <link rel="stylesheet" href="static/lib/startbootstrap-sb-admin-2-1.0.5/dist/css/sb-admin-2.css"/>
-    <link rel="stylesheet" href="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/morrisjs/morris.css"/>
+          href="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/metisMenu/dist/metisMenu.min.css"/>
+    <link rel="stylesheet" href="../static/lib/startbootstrap-sb-admin-2-1.0.5/dist/css/timeline.css"/>
+    <link rel="stylesheet" href="../static/lib/startbootstrap-sb-admin-2-1.0.5/dist/css/sb-admin-2.css"/>
+    <link rel="stylesheet" href="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" href="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/datatables-responsive/css/dataTables.responsive.css"/>
     <link rel="stylesheet" type="text/css"
-          href="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/font-awesome/css/font-awesome.min.css"/>
+          href="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/font-awesome/css/font-awesome.min.css"/>
     <!-- Custom styles for this template -->
-    <!-- <link rel="stylesheet" href="static/css/theme.css" > -->
+    <!-- <link rel="stylesheet" href="../static/css/theme.css" > -->
 </head>
 <body role="document">
 <!-- Navigation -->
@@ -340,31 +341,14 @@
         <div class="col-lg-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Order history summary
-                    <div class="pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                Actions
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li><a href="#">Action</a>
-                                </li>
-                                <li><a href="#">Another action</a>
-                                </li>
-                                <li><a href="#">Something else here</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    All Employees
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div id="morris-area-chart"></div>
-                    <div id="employees-table"></div>
+                    <table id="employees-table" class="dataTables_wrapper form-inline dt-bootstrap" ng-controller="employeeController">
+
+                    </table>
+                    <pre ng-repeat="employee in employees"> {{employee | json}}</pre>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -373,15 +357,17 @@
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="static/lib/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/raphael/raphael-min.js"></script>
-<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/morrisjs/morris.min.js"></script>
-<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/js/morris-data.js"></script>
-<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/dist/js/sb-admin-2.js"></script>
-<script type="text/javascript" src="static/lib/angular/angular.js"></script>
+<script type="text/javascript" src="../static/lib/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="../static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<script src="../static/lib/startbootstrap-sb-admin-2-1.0.5/dist/js/sb-admin-2.js"></script>
+<script type="text/javascript" src="../static/lib/angular/angular.js"></script>
+<script type="text/javascript" src="../static/lib/angular/angular-resource.min.js"></script>
 <!-- source java scripts -->
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="controllers/dateController.js"></script>
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../controllers/dateController.js"></script>
+<script type="text/javascript" src="../controllers/employeeController.js"></script>
+<script type="text/javascript" src="../services/employeeResource.js"></script>
 </body>
 </html>
