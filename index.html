@@ -351,6 +351,10 @@
     </nav>
     <div id="page-wrapper">
         <div ng-if="currentUser">Welcome, {{ currentUser.userName }}</div>
+<<<<<<< HEAD
+=======
+        <div ng-if="isAuthorized(userRoles.admin)">Welcome, Admin.</div>
+>>>>>>> 9e17fb0883b25636dc48c9318edca77513524716
         <div login-dialog ng-if="!isLoginPage"></div>
         <!-- Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
      unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
