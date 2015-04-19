@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<p ng-controller="dateController">Today is <span
+        class="label label-primary">{{today | date:'EEE yyyy-MM-dd HH:mm:ss'}}</span></p>
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
+                <div id="employees-table"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>
+
+
+<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/bower_components/morrisjs/morris.min.js"></script>
+<script src="static/lib/startbootstrap-sb-admin-2-1.0.5/js/morris-data.js"></script>
